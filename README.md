@@ -1,20 +1,13 @@
 # filedot-dl
 
-This is a command-line tool for downloading files from filedot.to. It automates the process of navigating the website, solving the captcha, and downloading the file.
+A command-line tool for downloading files from filedot.to
 
-## Features
-
--   Downloads files from filedot.to
--   Automatically solves the captcha
--   Supports specifying the download directory
--   Uses `aria2c` for fast and reliable downloads
-
-## Dependencies
+## 📦 Dependencies
 
 -   [Go](https://golang.org/)
 -   [aria2c](https://aria2.github.io/)
 
-## Installation
+## ⚙️ Installation
 
 1.  Install Go and aria2c.
 2.  Build the script:
@@ -22,7 +15,7 @@ This is a command-line tool for downloading files from filedot.to. It automates 
     go build -o filedot-dl main.go
     ```
 
-## Usage
+## 🚀 Usage
 
 ```bash
 ./filedot-dl [options] <URL>
@@ -31,12 +24,27 @@ This is a command-line tool for downloading files from filedot.to. It automates 
 ### Options
 
 -   `-d`, `--dir`: Specify the download directory. Defaults to the current directory.
+-   `-list`: Specify a file containing a list of URLs to download, one per line.
+-   `-N`, `-concurrent`: Number of concurrent file downloads. (default 3) (for link lists and folders)
 
-### Example
+### 📂 Custom Directory
 
 ```bash
 ./filedot-dl -d /path/to/downloads https://filedot.to/abcdefgh
 ```
+
+### 🔗 Link List
+
+```bash
+./filedot-dl -list /path/to/links.txt
+```
+
+### 🧩 Download Multiple Files Simultaneously
+
+```bash
+./filedot-dl -N <n> https://filedot.to/abcdefgh
+```
+
 
 ## Disclaimer
 
